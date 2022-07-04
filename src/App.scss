@@ -1,5 +1,7 @@
 
 @use './styles/partials/colors';
+@use './styles/partials/typography';
+@use './styles/partials/mixins';
 
 input {
   border-radius: 0.25rem;
@@ -11,5 +13,14 @@ input {
   &::placeholder {
     color: colors.$primary-text;
     opacity: 1; 
+  }
+}
+
+button {
+  @include mixins.button-CTA;
+
+  &:hover {
+    cursor: pointer;
+    background-color: colors.$secondary-CTA-hover; 
   }
 }

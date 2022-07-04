@@ -1,0 +1,14 @@
+
+.current-video {
+    &__views {
+        &::before {
+            content: url('../../assets/icons/views.svg'); 
+        }
+    }
+
+    &__likes {
+        &::before {
+            content: url('../../assets/icons/likes.svg');
+        }
+    }
+}
