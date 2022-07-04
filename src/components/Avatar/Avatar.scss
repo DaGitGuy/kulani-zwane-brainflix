@@ -1,0 +1,15 @@
+
+@use '../../styles/partials/mixins';
+
+ .avatar-image {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: left;
+
+    @include mixins.tablet {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}

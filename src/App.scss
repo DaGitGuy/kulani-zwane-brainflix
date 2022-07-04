@@ -1,3 +1,15 @@
-h1 {
-  color: sandybrown;
+
+@use './styles/partials/colors';
+
+input {
+  border-radius: 0.25rem;
+  border: solid 0.063rem colors.$secondary-outline-form;
+  background-color: colors.$secondary-background-form;
+  font-family: 'AvenirNext LT Pro';
+  color: colors.$primary-text;
+
+  &::placeholder {
+    color: colors.$primary-text;
+    opacity: 1; 
+  }
 }
