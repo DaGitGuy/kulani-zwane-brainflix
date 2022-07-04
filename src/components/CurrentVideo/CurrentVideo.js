@@ -5,29 +5,30 @@ import Comment from '../Comment/Comment';
 const CurrentVideo = (props) => {
   return (
     <section className='current-video'>
-        <img src={props.selectedVideo.image} alt={props.selectedVideo.title}/>
+        <video className='current-video__player' controls poster={props.selectedVideo.image}>
+        </video>
         <h1>{props.selectedVideo.title}</h1>
         <div>
             <p>By {props.selectedVideo.channel}</p>
             <p>{props.selectedVideo.timestamp}</p>
         </div>
-            <p className='current-video__views'>{props.selectedVideo.views}</p>
-            <p className='current-video__likes'>{props.selectedVideo.likes}</p>
+        <p className='current-video__views'>{props.selectedVideo.views}</p>
+        <p className='current-video__likes'>{props.selectedVideo.likes}</p>
+
         <div>
-        <p>{props.selectedVideo.description}</p>
-        <p>{props.selectedVideo.comments.length} Comments</p>
+          <p>{props.selectedVideo.description}</p>
+          <p>{props.selectedVideo.comments.length} Comments</p>
 
-        <CommentForm />
+          <CommentForm />
 
-        {props.selectedVideo.comments.map((comment, i) => (
-            <Comment
-              key={i} 
-              name={comment.name}
-              date={comment.timestamp}
-              comment={comment.comment}
-            /> 
-        ))}
-
+          {props.selectedVideo.comments.map((comment, i) => (
+              <Comment
+                key={i} 
+                name={comment.name}
+                date={comment.timestamp}
+                comment={comment.comment}
+              /> 
+          ))}
         </div>
     </section>
   );

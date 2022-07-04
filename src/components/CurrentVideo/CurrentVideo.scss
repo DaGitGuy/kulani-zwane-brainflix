@@ -1,5 +1,9 @@
 
 .current-video {
+    &__player {
+        aspect-ratio: 16 / 9;
+    }
+
     &__views {
         &::before {
             content: url('../../assets/icons/views.svg'); 

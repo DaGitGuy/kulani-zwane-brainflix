@@ -1,0 +1,16 @@
+
+@use '../../styles/partials/colors';
+
+.comment {
+    position: relative;
+    border-top: solid 0.063rem colors.$secondary-divider-line;
+
+    &__image {
+        position: absolute;
+        background-color: colors.$secondary-avatar-placeholder;
+        background-size: 2.25rem 2.25rem;
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+    }
+}
