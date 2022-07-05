@@ -2,12 +2,13 @@ import React from 'react';
 import './App.scss';
 import Header from './components/Header/Header';
 import CurrentVideo from './components/CurrentVideo/CurrentVideo';
-import videoData from './data/videos.json';
+import NextVideos from './components/NextVideos/NextVideos';
+import videosData from './data/videos.json';
 import videoDetailsData from './data/video-details.json'; 
 
 class App extends React.Component {
   state = {
-    videos: videoData,
+    videos: videosData,
     currentVideo: videoDetailsData[0]
   }
 
@@ -27,6 +28,10 @@ class App extends React.Component {
         <Header />
         <CurrentVideo
           selectedVideo={this.state.currentVideo}
+        />
+        <NextVideos 
+          videosData={filteredVideos}
+          onSelectVideo={this.selectVideo}
         />
       </>
     );

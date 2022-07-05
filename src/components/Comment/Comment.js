@@ -4,7 +4,7 @@ import './Comment.scss';
 const Comment = (props) => {
   return (
     <article className='comment'>
-        <img className='comment__image' alt='Avatar placeholder'/>
+        <img className='comment__image' alt=''/>
         <div className='comment__text-container'>
             <div className='comment-name-date'>
                 <p>{props.name}</p>
