@@ -10,7 +10,7 @@ const NextVideosItem = (props) => {
     return (
         <li>
             <a 
-                href=''
+                href='/'
                 onClick={handleVideoSelect}
             >
                 <img className='next-videos-item' src={props.poster} alt={props.title} />
