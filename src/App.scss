@@ -4,6 +4,10 @@
 @use './styles/partials/mixins';
 
 input {
+  min-height: 2.25rem; 
+  min-width: 15rem;
+  max-width: 100%;
+  padding: 0.75rem;
   border-radius: 0.25rem;
   border: solid 0.063rem colors.$secondary-outline-form;
   background-color: colors.$secondary-background-form;
@@ -14,6 +18,11 @@ input {
     color: colors.$primary-text;
     opacity: 1; 
   }
+
+  @include mixins.tablet {
+    min-height: 2.5rem;
+    padding: 1rem;
+  }
 }
 
 button {
@@ -22,5 +31,9 @@ button {
   &:hover {
     cursor: pointer;
     background-color: colors.$secondary-CTA-hover; 
+  }
+
+  @include mixins.tablet {
+    min-width: 9.375rem;
   }
 }

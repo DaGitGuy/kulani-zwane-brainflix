@@ -1,0 +1,7 @@
+
+@use '../../styles/partials/mixins';
+
+.next-videos {
+    @include mixins.padding-16px-left;
+    @include mixins.padding-16px-right;
+}

@@ -8,13 +8,14 @@ const NextVideosItem = (props) => {
     }
 
     return (
-        <li>
+        <li className='next-videos-item'>
             <a 
                 href='/'
                 onClick={handleVideoSelect}
             >
-                <img className='next-videos-item' src={props.poster} alt={props.title} />
+                <img className='next-videos-item__image' src={props.poster} alt={props.title} />
                 {props.title}
+                <br></br>
                 {props.channel}
             </a>
         </li>

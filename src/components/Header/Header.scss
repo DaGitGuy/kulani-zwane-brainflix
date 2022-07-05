@@ -1,0 +1,15 @@
+
+@use '../../styles/partials/mixins';
+
+.header {
+    @include mixins.padding-16px-left;
+    @include mixins.padding-16px-right;
+
+    &__logo {
+        display: block;
+        max-width: 7.5rem;
+        height: 1.563rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

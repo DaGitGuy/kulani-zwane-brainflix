@@ -10,7 +10,7 @@ const Comment = (props) => {
                 <p>{props.name}</p>
                 <p>{props.date}</p>
             </div>
-            <p>{props.comment}</p>
+            <p className='comment-description'>{props.comment}</p>
         </div>
     </article>
   );

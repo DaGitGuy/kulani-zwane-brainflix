@@ -8,7 +8,7 @@ const CurrentVideo = (props) => {
       <video className='current-video__player' controls poster={props.selectedVideo.image}>
       </video>
       <h1>{props.selectedVideo.title}</h1>
-      <div>
+      <div className='current-video__info'>
         <div>
           <p>By {props.selectedVideo.channel}</p>
           <p>{props.selectedVideo.timestamp}</p>

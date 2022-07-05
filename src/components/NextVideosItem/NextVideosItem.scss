@@ -1,5 +1,16 @@
 
+@use '../../styles/partials/colors';
+
 .next-videos-item {
-    width: 50px;
-    border-radius: 0.25rem;
+    list-style: none;
+
+    > a {
+        text-decoration: none;
+        color: colors.$primary-text;
+    }
+    &__image {
+        width: 50px;
+        border-radius: 0.25rem;
+    }
+    
 }

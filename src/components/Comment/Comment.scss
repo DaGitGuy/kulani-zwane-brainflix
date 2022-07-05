@@ -1,9 +1,10 @@
 
 @use '../../styles/partials/colors';
+@use '../../styles/partials/mixins';
 
 .comment {
+    @include mixins.divider-line-1px-top;
     position: relative;
-    border-top: solid 0.063rem colors.$secondary-divider-line;
 
     &__image {
         position: absolute;
@@ -13,4 +14,14 @@
         height: 2.25rem;
         border-radius: 50%;
     }
+}
+
+.comment-name-date {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 3.25rem;
+}
+
+.comment-description {
+    margin-left: 3.25rem;
 }

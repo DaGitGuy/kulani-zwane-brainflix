@@ -3,10 +3,31 @@
 @use './colors';
 @use './typography';
 
+//..............Padding....................
+@mixin padding-16px-left {
+    padding-left: 1rem;   
+}
+
+@mixin padding-16px-right {
+    padding-right: 1rem;   
+}
+
+//..............Divider Line....................
+@mixin divider-line-1px-top {
+    border-top: solid 0.063rem colors.$secondary-divider-line; 
+}
+
+@mixin divider-line-1px-bottom {
+    border-bottom: solid 0.063rem colors.$secondary-divider-line; 
+}
+
+
 //..............Button.......................
 @mixin button-CTA {
-    width: 100%;
+    min-width: 100%;
     height: 2.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     text-transform: uppercase;
     color: colors.$primary-CTA-text;
     font-weight: 700;

@@ -3,7 +3,7 @@ import NextVideosItem from '../NextVideosItem/NextVideosItem';
 
 const NextVideos = (props) => {
   return (
-    <section>
+    <section className='next-videos'>
         <h2>Next Videos</h2>
 
         {props.videosData.map((video) => {

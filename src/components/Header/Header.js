@@ -7,8 +7,8 @@ import brainFlixLogo from '../../assets/logo/BrainFlix-logo.svg';
 
 const Header = () => {
   return (
-    <header>
-        <img src={brainFlixLogo} alt='BrainFlix logo'></img>
+    <header className='header'>
+        <img className='header__logo' src={brainFlixLogo} alt='BrainFlix logo'></img>
         <SearchBar />
         <Avatar />
         <UploadButton />
