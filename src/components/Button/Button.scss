@@ -16,7 +16,6 @@ button {
     font-family: 'AvenirNext LT Pro'; 
     background-color: colors.$primary-CTA;
     background-repeat: no-repeat;
-    background-position: 2.5% center;
     border-radius: 0.25rem;
     border: none;
   
@@ -32,8 +31,10 @@ button {
 
 .button-upload {
     background-image: url('../../assets/icons/upload.svg');
+    background-position: 4% center;
 }
 
 .button-comment {
     background-image: url('../../assets/icons/add_comment.svg');
+    background-position: 6% center;
 }

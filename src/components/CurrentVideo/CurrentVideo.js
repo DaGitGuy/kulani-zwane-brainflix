@@ -5,8 +5,8 @@ import Comment from '../Comment/Comment';
 const CurrentVideo = (props) => {
   return (
     <>
-      <div>
-        <video className='current-video' controls poster={props.selectedVideo.image}>
+      <div className='current-video'>
+        <video className='current-video__player' controls poster={props.selectedVideo.image}>
         </video>
       </div>
 

@@ -2,9 +2,12 @@
 @use '../../styles/partials/mixins';
 
 .current-video {
-    aspect-ratio: 16 / 9;
-    display: block;
     width: 100%;
+
+    &__player {
+        aspect-ratio: 16 / 9;
+        width: 100%;
+    }
 }
 
 .current-video-info {
