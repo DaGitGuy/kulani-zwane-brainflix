@@ -1,15 +1,15 @@
 import './Avatar.scss';
 import mohan from '../../assets/images/Mohan-muruge.jpg';
 
-const Avatar = (props) => {
-  
-  if (props.bio === 'Mohan Muruge') {
+const Avatar = ({ use, bio }) => {
+
+  if (bio === 'Mohan Muruge') {
     return (
-      <img className={props.use} src={mohan} alt={props.bio}/>
+      <img className={use} src={mohan} alt={bio}/>
     )
   } else {
     return (
-      <img className={props.use} alt={props.bio}/>
+      <img className={use} alt={bio}/>
     )
   } 
 };

@@ -1,10 +1,10 @@
 import './NextVideosItem.scss';
 
-const NextVideosItem = (props) => {
+const NextVideosItem = ({ id, poster, title, channel, onSelectVideo }) => {
     const handleVideoSelect = (e) => {
         e.preventDefault();
 
-        props.onSelectVideo(props.id);
+        onSelectVideo(id);
     }
 
     return (
@@ -13,10 +13,10 @@ const NextVideosItem = (props) => {
                 href='/'
                 onClick={handleVideoSelect}
             >
-                <img className='next-videos-item__image' src={props.poster} alt=''/>
-                {props.title}
+                <img className='next-videos-item__image' src={poster} alt=''/>
+                {title}
                 <br></br>
-                {props.channel}
+                {channel}
             </a>
         </li>
     );

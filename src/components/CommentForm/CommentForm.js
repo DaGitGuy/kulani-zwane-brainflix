@@ -6,7 +6,7 @@ const CommentForm = () => {
   return (
     <section className='comment-form'>
         <div className='comment-form-content'>
-            <Avatar />
+            <Avatar use='avatar-mohan' bio='Mohan Muruge'/>
             <form className='comment-form-content__form' id='commentForm'>
                 <label>Join the Conversation</label>
                 <textarea id='comment' name='comment' placeholder='Add a new comment'></textarea>

@@ -1,12 +1,12 @@
 import './NextVideos.scss';
 import NextVideosItem from '../NextVideosItem/NextVideosItem';
 
-const NextVideos = (props) => {
+const NextVideos = ({ videosData, onSelectVideo }) => {
   return (
     <section className='next-videos'>
         <h2>Next Videos</h2>
 
-        {props.videosData.map((video) => {
+        {videosData.map((video) => {
             return (
                 <NextVideosItem 
                     key={video.id}
@@ -14,7 +14,7 @@ const NextVideos = (props) => {
                     poster={video.image}
                     title={video.title}
                     channel={video.channel}
-                    onSelectVideo={props.onSelectVideo}
+                    onSelectVideo={onSelectVideo}
                 />
             )
         })}
