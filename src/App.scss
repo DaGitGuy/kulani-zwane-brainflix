@@ -24,16 +24,3 @@ input {
     padding: 1rem;
   }
 }
-
-button {
-  @include mixins.button-CTA;
-
-  &:hover {
-    cursor: pointer;
-    background-color: colors.$secondary-CTA-hover; 
-  }
-
-  @include mixins.tablet {
-    min-width: 9.375rem;
-  }
-}

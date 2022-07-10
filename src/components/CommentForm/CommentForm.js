@@ -1,6 +1,6 @@
 import './CommentForm.scss';
 import Avatar from '../Avatar/Avatar';
-import addCommentIcon from '../../assets/icons/add_comment.svg';
+import Button from '../Button/Button';
 
 const CommentForm = () => {
   return (
@@ -8,9 +8,9 @@ const CommentForm = () => {
         <div className='comment-form-content'>
             <Avatar />
             <form className='comment-form-content__form' id='commentForm'>
-                <label for='comment'>Join the Conversation</label>
+                <label>Join the Conversation</label>
                 <textarea id='comment' name='comment' placeholder='Add a new comment'></textarea>
-                <button><img src={addCommentIcon} alt='Add comment icon'/>Comment</button>
+                <Button use='comment-button' purpose='Comment' />
             </form>
         </div>
     </section>

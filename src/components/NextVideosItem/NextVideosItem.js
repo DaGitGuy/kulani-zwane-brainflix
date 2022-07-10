@@ -13,7 +13,7 @@ const NextVideosItem = (props) => {
                 href='/'
                 onClick={handleVideoSelect}
             >
-                <img className='next-videos-item__image' src={props.poster} alt={props.title} />
+                <img className='next-videos-item__image' src={props.poster} alt=''/>
                 {props.title}
                 <br></br>
                 {props.channel}
