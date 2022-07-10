@@ -1,6 +1,7 @@
 import './CurrentVideo.scss';
 import CommentForm from '../CommentForm/CommentForm';
 import Comment from '../Comment/Comment';
+import dateConvert from '../../utils';
 
 const CurrentVideo = (props) => {
   return (
@@ -15,7 +16,7 @@ const CurrentVideo = (props) => {
         <div className='current-video-stats'>
           <div>
             <p>By {props.selectedVideo.channel}</p>
-            <p>{props.selectedVideo.timestamp}</p>
+            <p>{dateConvert(props.selectedVideo.timestamp)}</p>
           </div>
 
           <div>
@@ -36,7 +37,7 @@ const CurrentVideo = (props) => {
               <Comment
               key={i} 
               name={comment.name}
-              date={comment.timestamp}
+              date={dateConvert(comment.timestamp)}
               comment={comment.comment}
               /> 
             )
