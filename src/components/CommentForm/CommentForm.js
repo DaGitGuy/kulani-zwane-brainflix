@@ -10,7 +10,7 @@ const CommentForm = () => {
             <form className='comment-form-content__form' id='commentForm'>
                 <label>Join the Conversation</label>
                 <textarea id='comment' name='comment' placeholder='Add a new comment'></textarea>
-                <Button use='comment-button' purpose='Comment' />
+                <Button use='button-comment' purpose='Comment' />
             </form>
         </div>
     </section>

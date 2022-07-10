@@ -1,10 +1,12 @@
 import './Comment.scss';
+import Avatar from '../Avatar/Avatar';
 
 
 const Comment = (props) => {
   return (
     <article className='comment'>
-        <img className='comment__image' alt=''/>
+        <Avatar use='avatar-placeholder' bio='' />
+        {/* <img className='comment__image' alt=''/> */}
         <div className='comment__text-container'>
             <div className='comment-name-date'>
                 <p>{props.name}</p>

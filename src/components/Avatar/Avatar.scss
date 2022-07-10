@@ -1,12 +1,22 @@
 
 @use '../../styles/partials/mixins';
+@use '../../styles/partials/colors';
 
- .avatar-image {
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 50%;
+ .avatar-mohan {
+    @include mixins.avatar-image;
     object-fit: cover;
     object-position: left;
+
+    @include mixins.tablet {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+.avatar-placeholder {
+    @include mixins.avatar-image;
+    position: absolute;
+    background-color: colors.$secondary-avatar-placeholder;
 
     @include mixins.tablet {
         width: 2.5rem;

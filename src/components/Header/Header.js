@@ -10,8 +10,8 @@ const Header = () => {
     <header className='header'>
         <img className='header__logo' src={brainFlixLogo} alt='BrainFlix logo'></img>
         <SearchBar />
-        <Avatar />
-        <Button use='upload-button' purpose='Upload' />
+        <Avatar use='avatar-mohan' bio='Mohan Muruge' />
+        <Button use='button-upload' purpose='Upload' />
     </header>
   );
 };

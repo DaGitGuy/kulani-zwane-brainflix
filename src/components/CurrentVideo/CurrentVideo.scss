@@ -2,22 +2,22 @@
 @use '../../styles/partials/mixins';
 
 .current-video {
+    aspect-ratio: 16 / 9;
+    display: block;
+    width: 100%;
+}
+
+.current-video-info {
     @include mixins.padding-16px-left;
     @include mixins.padding-16px-right;
+}
 
-    &__player {
-        aspect-ratio: 16 / 9;
-        display: block;
-        width: 100%;
-    }
+.current-video-stats {
+    @include mixins.divider-line-1px-top;
+    @include mixins.divider-line-1px-bottom;
 
-    &__info {
-        @include mixins.divider-line-1px-top;
-        @include mixins.divider-line-1px-bottom;
-
-        display: flex;
-        gap: 3.125rem;
-    }
+    display: flex;
+    gap: 3.125rem;
 
     &__views {
         &::before {
