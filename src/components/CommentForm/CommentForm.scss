@@ -3,26 +3,48 @@
 @use '../../styles/partials/typography';
 @use '../../styles/partials/mixins';
 
-label {
-    display: block;
-    text-transform: uppercase;
-    color: colors.$primary-text-label; 
+.comment-form-content {
+    position: relative;
+    padding-bottom: 1rem;
+
+    &__avatar {
+        position: absolute;
+        margin-top: 1.5rem;
+        margin-right: 1rem;
+    }
+
+    &__form {
+        margin-left: 3.25rem;
+
+        @include mixins.tablet {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    @include mixins.tablet {
+        padding-bottom: 0.5rem;
+    }
+    @include mixins.desktop {
+        padding-right: 1.375rem;
+    }
 }
 
-textarea {
-    width: 100%;
-    height: 7rem;
-    border-radius: 0.25rem;
-    border: solid 0.063rem colors.$secondary-outline-form;
-    background-color: colors.$secondary-background-form;
-    resize: none;
-    padding: 0.75rem;
-    font-family: 'AvenirNext LT Pro'; 
-    color: colors.$primary-text;
+#comment {
+    margin-bottom: 1rem;
+}
 
-    &::placeholder {
-        color: colors.$primary-text;
-        opacity: 1;
-        font-size: 0.875rem;
+.comment-form-subcontainer {
+    width: 100%;
+
+    @include mixins.tablet {
+        padding-left: 0.625rem;
+    }
+}
+
+.comment-form-button {
+    @include mixins.tablet {
+        margin-top: 1.5rem;
+        margin-left: 1.5rem;
     }
 }

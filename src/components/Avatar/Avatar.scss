@@ -15,8 +15,8 @@
 
 .avatar-placeholder {
     @include mixins.avatar-image;
-    position: absolute;
-    background-color: colors.$secondary-avatar-placeholder;
+    background-color: colors.$secondary-placeholder;
+    background-size: 2.25rem 2.25rem;
 
     @include mixins.tablet {
         width: 2.5rem;

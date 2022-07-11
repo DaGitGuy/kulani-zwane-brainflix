@@ -9,9 +9,15 @@ const Header = () => {
   return (
     <header className='header'>
         <img className='header__logo' src={brainFlixLogo} alt='BrainFlix logo'></img>
-        <SearchBar />
-        <Avatar use='avatar-mohan' bio='Mohan Muruge' />
-        <Button use='button-upload' purpose='Upload' />
+        <div>
+          <div className='header__search'>
+            <SearchBar />
+            <Avatar className='header__avatar' use='avatar-mohan' bio='Mohan Muruge' />
+          </div>
+          <Button className='header__button' use='button-upload' purpose='Upload' />
+          <Avatar className='header__avatar-2' use='avatar-mohan' bio='Mohan Muruge' />
+        </div>
+        
     </header>
   );
 };

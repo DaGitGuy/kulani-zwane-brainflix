@@ -1,7 +1,18 @@
 
+@use '../../styles/partials/mixins';
+
 #searchBar {
+    height: 2.25rem;
+    width: 100%;
     background-image: url('../../assets/icons/search.svg');
     background-repeat: no-repeat;
-    background-position: 5% 50%;
+    background-position: 0.813rem center;
     padding-left: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+
+    @include mixins.tablet {
+        height: 2.5rem;
+        margin-bottom: 0;
+    }
 }

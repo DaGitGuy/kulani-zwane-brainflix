@@ -6,11 +6,14 @@ const CommentForm = () => {
   return (
     <section className='comment-form'>
         <div className='comment-form-content'>
-            <Avatar use='avatar-mohan' bio='Mohan Muruge'/>
+            <Avatar className='comment-form-content__avatar' use='avatar-mohan' bio='Mohan Muruge'/>
             <form className='comment-form-content__form' id='commentForm'>
-                <label>Join the Conversation</label>
-                <textarea id='comment' name='comment' placeholder='Add a new comment'></textarea>
-                <Button use='button-comment' purpose='Comment' />
+                <div className='comment-form-subcontainer'>
+                  <label>Join the Conversation</label>
+                  <textarea id='comment' name='comment' placeholder='Add a new comment'></textarea>
+                </div>
+                
+                <Button className='comment-form-button' use='button-comment' purpose='Comment' />
             </form>
         </div>
     </section>

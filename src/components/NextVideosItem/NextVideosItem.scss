@@ -1,16 +1,51 @@
 
 @use '../../styles/partials/colors';
+@use '../../styles/partials/mixins';
 
 .next-videos-item {
     list-style: none;
 
-    > a {
+    a {
+        display: flex;
         text-decoration: none;
         color: colors.$primary-text;
+        height: 3.938rem;
+        margin-bottom: 0.9rem;
+
+        @include mixins.tablet {
+            margin-bottom: 1.45rem;
+        }
     }
+}
+
+.next-videos-image-container {
+    background-color: colors.$secondary-placeholder;
+
     &__image {
-        width: 50px;
         border-radius: 0.25rem;
+        width: 6.25rem;
+        height: 3.938rem;
     }
-    
+}
+
+.next-videos-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__title {
+        margin: 0 0 0 0.9rem;
+        width: 10.938rem;
+
+        @include mixins.tablet {
+            width: 11.5rem;
+        }
+        @include mixins.desktop {
+            width: 11.4rem;
+        }
+    }
+
+    &__channel {
+        margin: 0 0 0 0.9rem;
+    }
 }

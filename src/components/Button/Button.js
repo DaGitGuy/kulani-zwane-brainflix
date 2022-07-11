@@ -1,8 +1,8 @@
 import './Button.scss';
 
-const Button = ({ use, purpose }) => {
+const Button = ({ className, use, purpose }) => {
   return (
-    <button className={use}>{purpose}</button>
+    <button className={className+' '+use}>{purpose}</button>
   );
 };
 

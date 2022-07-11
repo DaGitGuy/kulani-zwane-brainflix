@@ -6,13 +6,13 @@
     @include mixins.divider-line-1px-top;
     position: relative;
 
-    &__image {
+    &__avatar {
         position: absolute;
-        background-color: colors.$secondary-avatar-placeholder;
-        background-size: 2.25rem 2.25rem;
-        width: 2.25rem;
-        height: 2.25rem;
-        border-radius: 50%;
+        margin-top: 1rem;
+
+        @include mixins.tablet {
+            margin-top: 1.55rem;
+        }
     }
 }
 
@@ -20,8 +20,33 @@
     display: flex;
     justify-content: space-between;
     margin-left: 3.25rem;
+
+    &__name {
+        font-weight: 700;
+        margin-bottom: 0.563rem;
+    }
+
+    &__date {
+        color: colors.$primary-text-secondary;
+        margin-bottom: 0.563rem;
+    }
+
+    @include mixins.tablet {
+        margin-left: 3.875rem;
+    }
+    @include mixins.desktop {
+        padding-right: 1.375rem;
+    }
 }
 
 .comment-description {
     margin-left: 3.25rem;
+    margin-top: 0;
+
+    @include mixins.tablet {
+        margin-left: 3.875rem;
+    }
+    @include mixins.desktop {
+        padding-right: 1.375rem;
+    }
 }

@@ -4,33 +4,28 @@ import Comment from '../Comment/Comment';
 import dateConvert from '../../utils';
 
 const CurrentVideo = ({ selectedVideo }) => {
-  const { title, channel, image, description, views, likes, timestamp, comments } = selectedVideo; 
+  const { title, channel, description, views, likes, timestamp, comments } = selectedVideo; 
 
   return (
     <>
-      <div className='current-video'>
-        <video className='current-video__player' controls poster={image}>
-        </video>
-      </div>
-
       <section className='current-video-info'>
-        <h1>{title}</h1>
+        <h1 className='current-video-info__title'>{title}</h1>
         <div className='current-video-stats'>
           <div>
-            <p>By {channel}</p>
-            <p>{dateConvert(timestamp)}</p>
+            <h3 className='current-video-stats__channel'>By {channel}</h3>
+            <p className='current-video-stats__date'>{dateConvert(timestamp)}</p>
           </div>
 
-          <div>
+          <div> 
             <p className='current-video-stats__views'>{views}</p>
             <p className='current-video-stats__likes'>{likes}</p>
           </div>
         </div>
 
-        <p>{description}</p>
+        <p className='current-video-info__description'>{description}</p>
 
-        <div>
-          <p>{comments.length} Comments</p>
+        <div className='current-video-comments'>
+          <h3>{comments.length} Comments</h3>
 
           <CommentForm />
           

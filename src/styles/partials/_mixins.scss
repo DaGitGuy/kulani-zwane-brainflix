@@ -11,6 +11,18 @@
     padding-right: 1rem;   
 }
 
+@mixin padding-16px-bottom {
+    padding-bottom: 1rem;   
+}
+
+@mixin padding-36px-left {
+    padding-left: 2.25rem;   
+}
+
+@mixin padding-36px-right {
+    padding-right: 2.25rem;   
+}
+
 //..............Divider Line....................
 @mixin divider-line-1px-top {
     border-top: solid 0.063rem colors.$secondary-divider-line; 

@@ -1,18 +1,41 @@
 
 @use '../../styles/partials/mixins';
-
-.current-video {
-    width: 100%;
-
-    &__player {
-        aspect-ratio: 16 / 9;
-        width: 100%;
-    }
-}
+@use '../../styles/partials/colors';
 
 .current-video-info {
     @include mixins.padding-16px-left;
     @include mixins.padding-16px-right;
+
+    &__title {
+        @include mixins.tablet {
+            margin-top: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        @include mixins.desktop {
+            margin-top: 1.75rem;
+        }
+    }
+
+    &__description {
+        @include mixins.tablet {
+            margin-bottom: 1.875rem; 
+        }
+        @include mixins.desktop {
+            margin-bottom: 2.5rem;
+            padding-right: 1.375rem;
+        }
+    }
+
+    @include mixins.tablet {
+        @include mixins.padding-36px-left;
+        @include mixins.padding-36px-right; 
+    }
+
+    @include mixins.desktop {
+        padding-left: 7.5rem;
+        padding-right: 0;
+        border-right: solid 0.063rem colors.$secondary-divider-line;
+    }
 }
 
 .current-video-stats {
@@ -20,17 +43,84 @@
     @include mixins.divider-line-1px-bottom;
 
     display: flex;
-    gap: 3.125rem;
+    gap: 4.8rem;
+
+    > div {
+        @include mixins.tablet {
+            display: flex;
+            gap: 2rem;
+            align-items: baseline;
+        }
+    }
+
+    &__channel {
+        @include mixins.tablet {
+            margin: 0 0 0.3rem 0;
+        }
+    }
+
+    &__date {
+        color: colors.$primary-text-secondary;
+
+        @include mixins.tablet {
+            margin: 0 0 0.3rem 0;
+            font-size: 0.75rem;
+        }
+    }
 
     &__views {
+        height: 1.125rem;
+        display: flex;
+        color: colors.$primary-text-secondary;
         &::before {
-            content: url('../../assets/icons/views.svg'); 
+            content: url('../../assets/icons/views.svg');  
+            padding-right: 0.625rem;  
+            margin-top: 0.125rem; 
+
+            @include mixins.tablet {
+                margin-top: 0.2rem;
+            }
+        }
+        @include mixins.tablet {
+            margin: 0 0 0.3rem 0;
+            font-size: 0.75rem;
         }
     }
 
     &__likes {
+        height: 1.125rem;
+        display: flex;
+        color: colors.$primary-text-secondary;
         &::before {
             content: url('../../assets/icons/likes.svg');
+            padding-right: 0.625rem;
+            margin-top: 0.125rem; 
+
+            @include mixins.tablet {
+                margin-top: 0.2rem;
+            }
         }
+        @include mixins.tablet {
+            margin: 0 0 0.3rem 0;
+            font-size: 0.75rem;
+        }
+    }
+
+    @include mixins.tablet {
+        border-top: none;
+        justify-content: space-between;
+    }
+
+    @include mixins.desktop {
+        padding-right: 1.375rem;
+    }
+}
+
+.current-video-comments {
+    @include mixins.divider-line-1px-bottom;
+
+    @include mixins.desktop {
+        border-bottom: none;
+        padding-bottom: 2.25rem;
     }
 }

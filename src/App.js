@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.scss';
 import Header from './components/Header/Header';
+import VideoPlayer from './components/VideoPlayer/VideoPlayer';
 import CurrentVideo from './components/CurrentVideo/CurrentVideo';
 import NextVideos from './components/NextVideos/NextVideos';
 import videosData from './data/videos.json';
@@ -26,13 +27,18 @@ class App extends React.Component {
     return (
       <>
         <Header />
-        <CurrentVideo
+        <VideoPlayer 
           selectedVideo={this.state.currentVideo}
         />
-        <NextVideos 
-          videosData={filteredVideos}
-          onSelectVideo={this.selectVideo}
-        />
+        <div className='app-subcontainer'>
+          <CurrentVideo
+            selectedVideo={this.state.currentVideo}
+          />
+          <NextVideos 
+            videosData={filteredVideos}
+            onSelectVideo={this.selectVideo}
+          />
+        </div>
       </>
     );
   }

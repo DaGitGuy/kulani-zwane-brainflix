@@ -4,4 +4,15 @@
 .next-videos {
     @include mixins.padding-16px-left;
     @include mixins.padding-16px-right;
+    padding-bottom: 0.5rem;
+
+    @include mixins.tablet {
+        @include mixins.padding-36px-left;
+        @include mixins.padding-36px-right;
+        padding-bottom: 0.7rem;
+    }
+    @include mixins.desktop {
+        padding-left: 1.375rem;
+        padding-right: 7.5rem;
+    }
 }

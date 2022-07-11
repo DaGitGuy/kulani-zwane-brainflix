@@ -5,11 +5,11 @@ import Avatar from '../Avatar/Avatar';
 const Comment = ({ name, date, comment }) => {
   return (
     <article className='comment'>
-        <Avatar use='avatar-placeholder' bio='' />
-        <div className='comment__text-container'>
+        <Avatar className='comment__avatar' use='avatar-placeholder' bio='' />
+        <div>
             <div className='comment-name-date'>
-                <p>{name}</p>
-                <p>{date}</p>
+                <p className='comment-name-date__name'>{name}</p>
+                <p className='comment-name-date__date'>{date}</p>
             </div>
             <p className='comment-description'>{comment}</p>
         </div>
