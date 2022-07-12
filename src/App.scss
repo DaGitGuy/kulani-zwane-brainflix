@@ -122,9 +122,3 @@ p {
     line-height: 1.375rem;
   }
 }
-
-.app-subcontainer {
-  @include mixins.desktop {
-    display: flex;
-  }
-}

@@ -1,0 +1,19 @@
+
+@use '../../styles/partials/mixins';
+
+.upload-page {
+    @include mixins.divider-line-1px-top;
+    @include mixins.padding-16px-left;
+    @include mixins.padding-16px-right;
+
+    &__title {
+        margin-top: 1.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    &__preview {
+        width: 100%;
+        height: 10.313rem;
+        border-radius: 0.25rem;
+    }
+}

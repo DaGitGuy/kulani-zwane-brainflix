@@ -1,18 +1,10 @@
 import './NextVideosItem.scss';
+import { Link } from 'react-router-dom';
 
-const NextVideosItem = ({ id, poster, title, channel, onSelectVideo }) => {
-    const handleVideoSelect = (e) => {
-        e.preventDefault();
-
-        onSelectVideo(id);
-    }
-
+const NextVideosItem = ({ id, poster, title, channel }) => {
     return (
         <li className='next-videos-item'>
-            <a 
-                href='/'
-                onClick={handleVideoSelect}
-            >
+            <Link to={`/video/${id}`}>
                 <div className='next-videos-image-container'>
                     <img className='next-videos-image-container__image' src={poster} alt=''/>
                 </div>
@@ -21,7 +13,7 @@ const NextVideosItem = ({ id, poster, title, channel, onSelectVideo }) => {
                     <h3 className='next-videos-text-container__title'>{title}</h3>
                     <p className='next-videos-text-container__channel'>{channel}</p>
                 </div>
-            </a>
+            </Link>
         </li>
     );
 };

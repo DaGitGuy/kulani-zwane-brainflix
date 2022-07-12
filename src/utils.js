@@ -1,3 +1,6 @@
+export const API_URL = 'https://project-2-api.herokuapp.com';  
+export const API_KEY = '69fbc77d-072a-401a-ae93-926bbfcbbd52';  
+
 const dateConvert = (timestamp) => {
     const date = new Date(timestamp);
     const monthAdjust = date.getMonth()+1;

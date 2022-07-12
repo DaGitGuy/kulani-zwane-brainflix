@@ -1,0 +1,8 @@
+
+@use '../../styles/partials/mixins';
+
+.home-page-subcontainer {
+    @include mixins.desktop {
+      display: flex;
+    }
+  }

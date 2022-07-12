@@ -29,10 +29,10 @@ const CurrentVideo = ({ selectedVideo }) => {
 
           <CommentForm />
           
-          {comments.map((comment, i) => {
+          {comments.map((comment) => {
             return (
               <Comment
-              key={i} 
+              key={comment.id} 
               name={comment.name}
               date={dateConvert(comment.timestamp)}
               comment={comment.comment}

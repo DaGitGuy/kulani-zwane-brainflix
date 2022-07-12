@@ -1,47 +1,16 @@
-import React from 'react';
 import './App.scss';
-import Header from './components/Header/Header';
-import VideoPlayer from './components/VideoPlayer/VideoPlayer';
-import CurrentVideo from './components/CurrentVideo/CurrentVideo';
-import NextVideos from './components/NextVideos/NextVideos';
-import videosData from './data/videos.json';
-import videoDetailsData from './data/video-details.json'; 
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage/HomePage';
 
-class App extends React.Component {
-  state = {
-    videos: videosData,
-    currentVideo: videoDetailsData[0]
-  }
-
-  selectVideo = (videoId) => {
-    const selectedVideo = videoDetailsData.find(video => video.id === videoId);
-
-    this.setState({
-      currentVideo: selectedVideo
-    });
-  }
-
-  render() {
-    const filteredVideos = this.state.videos.filter(video => video.id !== this.state.currentVideo.id);
-
-    return (
-      <>
-        <Header />
-        <VideoPlayer 
-          selectedVideo={this.state.currentVideo}
-        />
-        <div className='app-subcontainer'>
-          <CurrentVideo
-            selectedVideo={this.state.currentVideo}
-          />
-          <NextVideos 
-            videosData={filteredVideos}
-            onSelectVideo={this.selectVideo}
-          />
-        </div>
-      </>
-    );
-  }
+const App = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route path='/' exact component={HomePage} />
+        <Route path='/video/:videoId' component={HomePage} />
+      </Switch>
+    </Router>
+  );
 }
 
 export default App;
