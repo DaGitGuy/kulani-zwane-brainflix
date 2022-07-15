@@ -2,7 +2,6 @@ import './HomePage.scss';
 import { Component } from 'react';
 import { API_URL } from '../../utils';
 import { API_KEY } from '../../utils';
-import Header from '../../components/Header/Header';
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
 import CurrentVideo from '../../components/CurrentVideo/CurrentVideo';
 import NextVideos from '../../components/NextVideos/NextVideos';
@@ -12,7 +11,8 @@ import axios from 'axios';
 class HomePage extends Component {
   state = {
     videos: [],
-    currentVideo: {}
+    currentVideo: {},
+    focus: false
   };
 
   getVideo = (id) => {
@@ -53,18 +53,21 @@ class HomePage extends Component {
 
     return (
       <>
-        <Header />
-        <VideoPlayer 
-          selectedVideo={this.state.currentVideo}
-        />
-        <div className='home-page-subcontainer'>
-          <CurrentVideo
-            selectedVideo={this.state.currentVideo}
-          />
-          <NextVideos 
-            videosData={filteredVideos}
-          />
-        </div>
+        {this.state.currentVideo.id &&
+          <>
+            <VideoPlayer 
+              selectedVideo={this.state.currentVideo}
+            />
+            <div className='home-page-subcontainer'>
+              <CurrentVideo
+                selectedVideo={this.state.currentVideo}
+              />
+              <NextVideos 
+                videosData={filteredVideos}
+              />
+            </div>
+          </>
+        }
       </>
     );
   }

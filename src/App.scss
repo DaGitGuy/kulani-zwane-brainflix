@@ -54,6 +54,7 @@ textarea {
 
   @include mixins.tablet {
     height: 2.5rem;
+    overflow: hidden;
   }
 }
 
@@ -121,4 +122,12 @@ p {
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
+}
+
+.active-state {
+  outline: solid 0.125rem colors.$primary-active-form;
+}
+
+.error-state {
+  outline: solid 0.063rem colors.$error-form;
 }

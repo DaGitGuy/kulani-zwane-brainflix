@@ -13,6 +13,13 @@
         }
     }
 
+    a {
+        text-decoration: none;
+        @include mixins.tablet {
+            margin: auto 0 auto 0;
+        }
+    }
+
     &__logo {
         display: block;
         max-width: 7.5rem;
@@ -22,7 +29,7 @@
         margin-bottom: 1rem;
 
         @include mixins.tablet {
-            margin: auto 0 auto 0;
+            margin-bottom: 0;
         }
     }
 

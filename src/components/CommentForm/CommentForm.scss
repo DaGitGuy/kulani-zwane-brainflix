@@ -32,6 +32,10 @@
 
 #comment {
     margin-bottom: 1rem;
+
+    @include mixins.tablet {
+        padding: 0.5rem 0.5rem 0.5rem 0.75rem;
+    }
 }
 
 .comment-form-subcontainer {
