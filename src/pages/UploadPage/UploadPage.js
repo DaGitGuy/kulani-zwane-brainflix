@@ -74,22 +74,22 @@ class UploadPage extends Component {
           <h1 className='upload-page__title'>Upload Video</h1>
           <div className='upload-page__container'>
             <div className='upload-page-thumbnail'>
-              <label>Video Thumbnail</label>
-              <img className='upload-page-thumbnail__preview' src={uploadPreview} alt=''/>
+              <label htmlFor='uploadPageThumbnail'>Video Thumbnail</label>
+              <img className='upload-page-thumbnail__preview' id='uploadPageThumbnail' src={uploadPreview} alt=''/>
             </div>
             <form className='upload-page-form' id="uploadPageForm">
-              <label>Title Your Video</label>
+              <label htmlFor='videoTitle'>Title Your Video</label>
   
               <input className={addClass1} onFocus={this.onFocus1} onBlur={this.onBlur1} type='text' id='videoTitle' name='videoTitle' placeholder='Add a title to your video'/>
   
-              <label>Add a Video Description</label>
+              <label htmlFor='videoDescription'>Add a Video Description</label>
               <textarea className={addClass2} onFocus={this.onFocus2} onBlur={this.onBlur2} id='videoDescription' name='videoDescription' placeholder='Add a description to your video'></textarea>
               <div className='upload-page-form__buttons'>
                 <div className='cancelButton1'>Cancel</div>
   
                 <button onClick={(e) => {
                   e.preventDefault();
-                  if (!this.state.videoTitle || !this.state.videoDescription) {
+                  if (this.state.videoTitle.trim().length === 0 || this.state.videoDescription.trim().length === 0) {
                     alert('Video upload failed!\nPlease enter a title and description for your video.');  
                   } else {
                     alert('Video upload successful.\nHappy streaming!');

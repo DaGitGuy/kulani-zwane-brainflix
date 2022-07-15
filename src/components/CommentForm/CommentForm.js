@@ -45,7 +45,7 @@ class CommentForm extends Component {
               <Avatar className='comment-form-content__avatar' use='avatar-mohan' bio='Mohan Muruge'/>
               <form className='comment-form-content__form' id='commentForm'>
                   <div className='comment-form-subcontainer'>
-                    <label>Join the Conversation</label>
+                    <label htmlFor='comment'>Join the Conversation</label>
                     <textarea className={addClass} onFocus={this.onFocus} onBlur={this.onBlur} id='comment' name='comment' placeholder='Add a new comment'></textarea>
                   </div>
                   
