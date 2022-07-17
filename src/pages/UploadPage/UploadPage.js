@@ -2,6 +2,7 @@ import './UploadPage.scss';
 import { Component } from 'react';
 import uploadPreview from '../../assets/images/Upload-video-preview.jpg'; 
 import axios from 'axios';
+import { v4 as uuid } from 'uuid';
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL || process.env.REACT_APP_SERVER_URL_BACKUP;
 
@@ -81,7 +82,8 @@ class UploadPage extends Component {
         views: '2', 
         likes: '2', 
         duration: '4:16', 
-        video: 'https://project-2-api.herokuapp.com/stream'
+        video: 'https://project-2-api.herokuapp.com/stream',
+        id: uuid()
       };
 
       const videoObjectJsonString = JSON.stringify(videoObject);
@@ -97,7 +99,7 @@ class UploadPage extends Component {
           console.log(response.data);
           alert('Video upload successful.\nHappy streaming!');
           e.target.form.reset();
-          setTimeout(() => {this.props.history.push('/')}, 1300);
+          setTimeout(() => {this.props.history.push(`/video/${response.data.id}`)}, 1200);
         })
         .catch((error) => {
           console.log("Couldn't post a video: ", error);
