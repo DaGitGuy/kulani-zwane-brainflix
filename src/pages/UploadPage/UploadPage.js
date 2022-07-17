@@ -1,6 +1,9 @@
 import './UploadPage.scss';
 import { Component } from 'react';
 import uploadPreview from '../../assets/images/Upload-video-preview.jpg'; 
+import axios from 'axios';
+
+const SERVER_URL = process.env.REACT_APP_SERVER_URL || process.env.REACT_APP_SERVER_URL_BACKUP;
 
 class UploadPage extends Component {
   state = {
@@ -62,9 +65,49 @@ class UploadPage extends Component {
     }
   }
 
-  render() {
+  uploadVideo = (e) => {
+    e.preventDefault();
+    console.log(e);
 
-    const { history } = this.props;
+    if (this.state.videoTitle.trim().length === 0 || this.state.videoDescription.trim().length === 0) {
+      alert('Video upload failed!\nPlease enter a title and description for your video.');  
+    } else {
+
+      const videoObject = {
+        title: this.state.videoTitle, 
+        channel: 'BrainStation',
+        image: `${SERVER_URL}/images/Upload-video-preview.jpg`,  
+        description: this.state.videoDescription, 
+        views: '2', 
+        likes: '2', 
+        duration: '4:16', 
+        video: 'https://project-2-api.herokuapp.com/stream'
+      };
+
+      const videoObjectJsonString = JSON.stringify(videoObject);
+
+      const headers = {
+        'Content-Type': 'application/json'  
+      };
+
+      axios.post(`${SERVER_URL}/videos`, videoObjectJsonString, {
+        headers: headers
+      })
+        .then((response) => {
+          console.log(response.data);
+          alert('Video upload successful.\nHappy streaming!');
+          e.target.form.reset();
+          setTimeout(() => {this.props.history.push('/')}, 1300);
+        })
+        .catch((error) => {
+          console.log("Couldn't post a video: ", error);
+          alert(`Video upload failed!\n${error.message}`); 
+        });
+        
+    }
+  }
+
+  render() {
     const addClass1 = this.getClass1();
     const addClass2 = this.getClass2();
 
@@ -79,24 +122,14 @@ class UploadPage extends Component {
             </div>
             <form className='upload-page-form' id="uploadPageForm">
               <label htmlFor='videoTitle'>Title Your Video</label>
-  
               <input className={addClass1} onFocus={this.onFocus1} onBlur={this.onBlur1} type='text' id='videoTitle' name='videoTitle' placeholder='Add a title to your video'/>
   
               <label htmlFor='videoDescription'>Add a Video Description</label>
               <textarea className={addClass2} onFocus={this.onFocus2} onBlur={this.onBlur2} id='videoDescription' name='videoDescription' placeholder='Add a description to your video'></textarea>
+
               <div className='upload-page-form__buttons'>
                 <div className='cancelButton1'>Cancel</div>
-  
-                <button onClick={(e) => {
-                  e.preventDefault();
-                  if (this.state.videoTitle.trim().length === 0 || this.state.videoDescription.trim().length === 0) {
-                    alert('Video upload failed!\nPlease enter a title and description for your video.');  
-                  } else {
-                    alert('Video upload successful.\nHappy streaming!');
-                    history.push('/');
-                  }
-                }} className='publishButton' type='submit'>Publish</button>
-  
+                <button onClick={this.uploadVideo} className='publishButton' type='submit'>Publish</button>
                 <div className='cancelButton2'>Cancel</div>
               </div>
             </form>

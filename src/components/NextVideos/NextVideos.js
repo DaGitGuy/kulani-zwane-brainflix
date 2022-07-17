@@ -8,13 +8,13 @@ const NextVideos = ({ videosData }) => {
 
         {videosData.map((video) => {
             return (
-                <NextVideosItem 
-                    key={video.id}
-                    id={video.id}
-                    poster={video.image}
-                    title={video.title}
-                    channel={video.channel}
-                />
+              <NextVideosItem 
+                key={video.id}
+                id={video.id}
+                poster={video.image}
+                title={video.title}
+                channel={video.channel}
+              />
             )
         })}
     </section>
