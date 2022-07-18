@@ -1,50 +1,49 @@
 import './HomePage.scss';
 import { Component } from 'react';
-import { API_URL } from '../../utils';
-import { API_KEY } from '../../utils';
-import Header from '../../components/Header/Header';
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
 import CurrentVideo from '../../components/CurrentVideo/CurrentVideo';
 import NextVideos from '../../components/NextVideos/NextVideos';
 import axios from 'axios';
 
+const SERVER_URL = process.env.REACT_APP_SERVER_URL || process.env.REACT_APP_SERVER_URL_BACKUP;
 
 class HomePage extends Component {
   state = {
     videos: [],
-    currentVideo: {}
+    currentVideo: {},
+    focus: false
   };
 
   getVideo = (id) => {
-    axios.get(`${API_URL}/videos/${id}?api_key=${API_KEY}`)
-        .then((response) => {
-            this.setState({
-                currentVideo: response.data
-            })    
-        })
-        .catch((error) => {
-            console.log("Couldn't fetch a video: ", error)
-        });
+    axios.get(`${SERVER_URL}/videos/${id}`)
+      .then((response) => {
+        this.setState({
+          currentVideo: response.data
+        })    
+      })
+      .catch((error) => {
+        console.log("Couldn't fetch a video: ", error)
+      });
   };
 
   componentDidMount() {
-    axios.get(`${API_URL}/videos/?api_key=${API_KEY}`)
-        .then((response) => {
-            this.setState({
-                videos: response.data
-            })
-            const getVideoId = this.props.match.params.videoId || response.data[0].id;
-            this.getVideo(getVideoId);
+    axios.get(`${SERVER_URL}/videos/`)
+      .then((response) => {
+        this.setState({
+          videos: response.data
         })
-        .catch((error) => {
-            console.log("Couldn't fetch videos: ", error)
-        });
+        const getVideoId = this.props.match.params.videoId || response.data[0].id;
+        this.getVideo(getVideoId);
+      })
+      .catch((error) => {
+        console.log("Couldn't fetch videos: ", error)
+      });
   };
 
   componentDidUpdate(prevProps) {
     if (this.props.match.params.videoId !== prevProps.match.params.videoId) {
-        const getVideoId = this.props.match.params.videoId || this.state.videos[0].id;
-        this.getVideo(getVideoId);
+      const getVideoId = this.props.match.params.videoId || this.state.videos[0].id;
+      this.getVideo(getVideoId);
     }
   };
 
@@ -53,18 +52,21 @@ class HomePage extends Component {
 
     return (
       <>
-        <Header />
-        <VideoPlayer 
-          selectedVideo={this.state.currentVideo}
-        />
-        <div className='home-page-subcontainer'>
-          <CurrentVideo
-            selectedVideo={this.state.currentVideo}
-          />
-          <NextVideos 
-            videosData={filteredVideos}
-          />
-        </div>
+        {this.state.currentVideo.id &&
+          <>
+            <VideoPlayer 
+              selectedVideo={this.state.currentVideo}
+            />
+            <div className='home-page-subcontainer'>
+              <CurrentVideo
+                selectedVideo={this.state.currentVideo}
+              />
+              <NextVideos 
+                videosData={filteredVideos}
+              />
+            </div>
+          </>
+        }
       </>
     );
   }

@@ -2,6 +2,7 @@ import './CurrentVideo.scss';
 import CommentForm from '../CommentForm/CommentForm';
 import Comment from '../Comment/Comment';
 import dateConvert from '../../utils';
+import { v4 as uuid } from 'uuid';
 
 const CurrentVideo = ({ selectedVideo }) => {
   const { title, channel, description, views, likes, timestamp, comments } = selectedVideo; 
@@ -30,14 +31,13 @@ const CurrentVideo = ({ selectedVideo }) => {
           <CommentForm />
           
           {comments.map((comment) => {
-            return (
-              <Comment
-              key={comment.id} 
-              name={comment.name}
-              date={dateConvert(comment.timestamp)}
-              comment={comment.comment}
-              /> 
-            )
+              return (
+              <Comment 
+                key={uuid()} 
+                name={comment.name} 
+                date={dateConvert(comment.timestamp)} 
+                comment={comment.comment} /> 
+              )
           })}
         </div> 
       </section>

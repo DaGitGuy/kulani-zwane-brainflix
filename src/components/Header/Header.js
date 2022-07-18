@@ -17,7 +17,9 @@ const Header = () => {
             <SearchBar />
             <Avatar className='header__avatar' use='avatar-mohan' bio='Mohan Muruge' />
           </div>
+          <Link to='/upload'>
             <Button className='header__button' use='button-upload' purpose='Upload' />
+          </Link>
           <Avatar className='header__avatar-2' use='avatar-mohan' bio='Mohan Muruge' />
         </div> 
     </header>
