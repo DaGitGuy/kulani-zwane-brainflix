@@ -10,7 +10,7 @@ const App = () => {
       <Header />
       <Switch>
         <Route path='/' exact component={HomePage} />
-        <Route path='/video/:videoId' component={HomePage} />
+        <Route path='/videos/:videoId' component={HomePage} />
         <Route path='/upload' exact component={UploadPage}/>
       </Switch>
     </Router>

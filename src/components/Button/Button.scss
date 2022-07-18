@@ -5,25 +5,8 @@
 
 .button-upload {
   @include mixins.button;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-image: url('../../assets/icons/upload.svg');
   background-position: 0.75rem center;
-  background-size: 1.25rem;
-
-  @include mixins.tablet {
-    min-width: 9.375rem;
-  }
-}
-
-.button-comment {
-  @include mixins.button;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url('../../assets/icons/add_comment.svg');
-  background-position: 0.938rem center;
   background-size: 1.25rem;
 
   @include mixins.tablet {

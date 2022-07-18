@@ -47,7 +47,13 @@
 }
 
 .comment-form-button {
+    @include mixins.button;
+    background-image: url('../../assets/icons/add_comment.svg');
+    background-position: 0.938rem center;
+    background-size: 1.25rem;
+
     @include mixins.tablet {
+        min-width: 9.375rem;
         margin-top: 1.5rem;
         margin-left: 1.5rem;
     }

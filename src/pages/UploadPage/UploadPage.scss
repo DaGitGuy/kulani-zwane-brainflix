@@ -97,47 +97,35 @@
     }
 }
 
-.publishButton {
+.publish-button {
     @include mixins.button;
-    margin-bottom: 1.25rem;
     background-image: url('../../assets/icons/publish.svg');
     background-position: 0.75rem center;
     background-size: 1.25rem;
 
+    margin-bottom: 1.25rem;
+  
     @include mixins.tablet {
-        min-width: 9.375rem;
+      min-width: 9.375rem;
     }
-}
+  }
 
-.cancelButton1 {
+.cancel-button-1 {
     display: none;
 
     @include mixins.tablet {
-        @include mixins.button;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: colors.$primary-background;
-        color: colors.$primary-CTA;
+        @include mixins.button-cancel;
         margin-bottom: 0.5rem;
         min-width: 9.375rem;
         padding-right: 4rem; 
     }
 }
 
-.cancelButton2 {
-    @include mixins.button;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: colors.$primary-background;
-    color: colors.$primary-CTA;
+.cancel-button-2 {
+    @include mixins.button-cancel;
     margin-bottom: 0.5rem;
 
     @include mixins.tablet {
         display: none;
     }
 }
-
-
-

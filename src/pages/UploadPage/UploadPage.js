@@ -99,7 +99,7 @@ class UploadPage extends Component {
           console.log(response.data);
           alert('Video upload successful.\nHappy streaming!');
           e.target.form.reset();
-          setTimeout(() => {this.props.history.push(`/video/${response.data.id}`)}, 1200);
+          setTimeout(() => {this.props.history.push(`/videos/${response.data.id}`)}, 1000);
         })
         .catch((error) => {
           console.log("Couldn't post a video: ", error);
@@ -130,9 +130,9 @@ class UploadPage extends Component {
               <textarea className={addClass2} onFocus={this.onFocus2} onBlur={this.onBlur2} id='videoDescription' name='videoDescription' placeholder='Add a description to your video'></textarea>
 
               <div className='upload-page-form__buttons'>
-                <div className='cancelButton1'>Cancel</div>
-                <button onClick={this.uploadVideo} className='publishButton' type='submit'>Publish</button>
-                <div className='cancelButton2'>Cancel</div>
+                <div className='cancel-button-1'>Cancel</div>
+                <button onClick={this.uploadVideo} className='publish-button' type='submit'>Publish</button>
+                <div className='cancel-button-2'>Cancel</div>
               </div>
             </form>
           </div>
