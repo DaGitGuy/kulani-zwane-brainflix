@@ -14,21 +14,21 @@ Node.js, Express, Axios
 Access the back-end app at: https://github.com/DaGitGuy/kulani-zwane-brainflix-api 
 
 # Install
-Clone this repository via HTTPS or SSH:
-$ git clone https://github.com/DaGitGuy/kulani-zwane-brainflix.git
+Clone this repository via HTTPS or SSH:<br>
+$ git clone https://github.com/DaGitGuy/kulani-zwane-brainflix.git <br>
 $ git clone git@github.com:DaGitGuy/kulani-zwane-brainflix.git
 
-Go into the repository:
+Go into the repository:<br>
 $ cd kulani-zwane-brainflix
 
-Install dependencies:
-$ npm install
-$ npm install sass
-$ npm install react-router-dom@5.3
-$ npm install axios
+Install dependencies:<br>
+$ npm install <br>
+$ npm install sass <br>
+$ npm install react-router-dom@5.3 <br>
+$ npm install axios <br>
 $ npm install dotenv --save
 
-Run the app:
+Run the app:<br>
 $ npm start
 
 Run the app in the development mode. 
